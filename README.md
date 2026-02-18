@@ -8,8 +8,9 @@ or the reimplementation [librw](https://github.com/aap/librw) (D3D9, OpenGL 2.1 
 Audio is done with MSS (using dlls from original GTA) or OpenAL.
 
 The project has also been ported to the [Nintendo Switch](https://github.com/AGraber/re3-nx/),
-[Playstation Vita](https://github.com/Rinnegatamante/re3) and
-[Nintendo Wii U](https://github.com/GaryOderNichts/re3-wiiu/).
+[Playstation Vita](https://github.com/Rinnegatamante/re3),
+[Nintendo Wii U](https://github.com/GaryOderNichts/re3-wiiu/) and
+[Raspberry Pi 5](README_PI5.md).
 
 We cannot build for PS2 or Xbox yet. If you're interested in doing so, get in touch with us.
 
