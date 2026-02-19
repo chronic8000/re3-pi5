@@ -5,8 +5,12 @@ Welcome to the GTA III (re3) port for the Raspberry Pi 5. This project uses the 
 ## 1. How it was achieved
 This port involves several key optimizations and compatibility fixes for the Raspberry Pi 5 platform:
 
-- **Cortex-A76 Optimization**: Compiled with `-mcpu=cortex-a76 -O3` to leverage the Pi 5's powerful ARMv8.2-A cores.
-- **16KB Page Support**: The binary is aligned to **64KB (0x10000)** boundaries during linking. This makes it fully compatible with the 16KB page size kernel used in modern Raspberry Pi OS releases, preventing "Invalid Instruction" or memory mapping crashes.
+- **Cortex-A76 Optimization**: Compiled with `-mcpu=cortex-a76 -O3 -ffast-math -ftree-vectorize` to leverage the Pi 5's powerful ARMv8.2-A cores.
+- **16KB Page Support**: The binary is aligned to **16KB (0x4000)** boundaries during linking for full compatibility.
+- **Chronic8000 GPU Enhancements**:
+    - **Mediump Precision**: Fragment shaders refactored for VideoCore VII to reduce ALU load.
+    - **Early Alpha Discard**: Alpha testing moved to the top of the fragment pipeline to save GPU cycles on invisible pixels.
+    - **Simplified Reflection**: Approximated car reflections for massive FPS gains at 1440p.
 - **OpenGL ES / LIBRW**: Uses `librw` with the OpenGL 3.0+ backend for high-performance rendering on the VideoCore VII GPU.
 - **OpenAL Audio**: Integrated with OpenAL Soft for low-latency, high-fidelity positional audio.
 
